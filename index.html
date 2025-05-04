@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://b.zmtcdn.com/images/logo/zomato_logo_2017.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Zomato</title>
+</head>
+<body>
+    <div class="bnr">
+        <img src="./assets/bgbnr.avif" alt="image">
+        <div class="nav">
+             <div class="get-app">
+                <a href="https://www.zomato.com/mobile">
+                    <i class="fa-solid fa-download" class="download"></i>
+                    <h4>Get App</h4>
+                </a>
+             </div>
+             <div class="btns">
+                <a href="#">Investor Relations</a>
+                <a href="#">Add Restaurant</a>
+                <a href="#">Log in</a>
+                <a href="#">Sign up</a>
+             </div>
+        </div>
+        <nav>
+            <!-- Hamburger menu icon -->
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+            <div class="bars" style="display: none;">
+               <div class="controls">
+                <!-- Close button to hide menu -->
+                <i class="fa-solid fa-xmark" onclick="toggleMenu()"></i>
+                <h1>Zomato</h1>
+               </div>
+               <div class="nav-btns">
+                <a href="#">Investor Relations</a>
+                <a href="#">Add Restaurant</a>
+                <a href="#">Log in</a>
+                <a href="#">Sign up</a>
+               </div>
+            </div>
+        </nav>
+        <div class="con">
+            <h1>Zomato</h1>
+            <p>Discover The Best Food & Drinks in <span class="location"></span></p>
+            <div class="search-bar">
+                <div class="location-dropdown">
+                     <select onchange="fun(this)">
+                        <option value="" selected disabled>Select location</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Karimnagar">Karimnagar</option>
+                        <option value="Vizag">Vizag</option>
+                     </select>
+                </div>
+                <div class="input-box">
+                <input type="text" class="search-input" placeholder="Search for restaurant, cuisine or a dish">
+                <i class="fa-solid fa-magnifying-glass"  id="search-icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bnrs">
+        <div class="bnr1">
+            <div class="img">
+                <img src="./assets/deliveryboy1.jpg" >
+            </div>
+            <div class="hd">
+                <h2>order online</h2>
+                <p>order food to doorstep</p>
+            </div>
+        </div>
+        <div class="bnr2">
+            <div class="img">
+                <img src="./assets/regionalfood.avif">
+            </div>
+            <div class="hd">
+                <h2>Regional Food</h2>
+                <p>Explore the regional food</p>
+            </div>
+        </div>
+        <div class="bnr3">
+            <div class="img">
+                <img src="./assets/liveevents.jpg">
+            </div>
+            <div class="hd">
+                <h2>Live Events</h2>
+                <p>live events and concets</p>
+            </div>
+        </div>
+    </div>
+  <div class="all-cards">
+      <div class="cards-head">
+        <h1>Collections</h1>
+        <div class="cards-btn">
+            <p>Explore curated lists of top restaurants, cafes, pubs, and bars in Hyderabad, based on trends</p>
+            <div>
+                <p>All collections in <span class="location"></span></p>
+                <i class="fa-solid fa-caret-down" id="collection-btn"></i>
+            </div>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card1">
+            <img src="./assets/Festival.avif" alt="festival-image">
+            <div class="para">
+                <p>Festival Special Resturants</p>
+                <div class="places">
+                    <p>13 Places</p>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card2">
+            <img src="./assets/Toptrending.png" alt="Toptrending">
+            <div class="para">
+                <p>Top trending Resturants</p>
+                <div class="places">
+                    <p>32 Places</p>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card3">
+            <img src="./assets/newopen.png" alt="newly opened">
+            <div class="para">
+                <p>Top trending Resturants</p>
+                <div class="places">
+                    <p>10 Places</p>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+            </div>
+        </div>
+        <div class="card4">
+            <img src="./assets/RegionalFlavours.png" alt="Regional favours">
+            <div class="para">
+                <p>Regional Flavours</p>
+                <div class="places">
+                    <p>15 Places</p>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- popular localities in the AREA -->
+     <div class="p-localities">
+        <h1>Popular localities in and around Hyderabad</h1>
+        <div class="locality">
+            <div class="pl-1">
+                <div class="p-1">
+                    <h3>Jubliee Hills</h3>
+                    <p>482 Places</p>
+                </div>
+                <h3 class="gt">&gt;</h3>
+            </div>
+            <div class="pl-2">
+                <div class="p-2">
+                    <h3>Gachibowli</h3>
+                    <p>831 Places</p>
+                </div>
+                <h3 class="gt">&gt;</h3>
+            </div>
+            <div class="pl-3">
+                <div class="p-3">
+                    <h3>Banjara Hills</h3>
+                    <p>432 Places</p>
+                </div>
+                <h3 class="gt">&gt;</h3>
+            </div>
+            <div class="pl-4">
+                <div class="p-4">
+                    <h3>Hitech City</h3>
+                    <p>405 Places</p>
+                </div>
+                <h3 class="gt">&gt;</h3>
+            </div>
+            <div class="pl-5">
+                <div class="p-5">
+                    <h3>Madhapur</h3>
+                    <p>896 Places</p>
+                </div>
+                <h3 class="gt">&gt;</h3>
+            </div>
+            <div class="pl-6">
+                <div class="p-6">
+                    <h3>Kondapur</h3>
+                    <p>630 Places</p>
+                </div>
+                <h3 class="gt">&gt;</h3>
+            </div>
+            <div class="pl-7">
+                <div class="p-7">
+                    <h3>Kukatpally</h3>
+                    <p>1517 Places</p>
+                </div>
+                <h3 class="gt">&gt;</h3>
+            </div>
+            <div class="pl-8">
+                <div class="p-8">
+                    <h3>Begumpet</h3>
+                    <p>162 Places</p>
+                </div>
+                <h3 class="gt">&gt;</h3>
+            </div>
+            <div class="pl-9">
+                <div class="p-9">
+                    <h3>Himayath Nagar</h3>
+                    <p>232 Places</p>
+                </div>
+                <h3 class="gt">&gt;</h3>
+            </div>
+        </div>
+     </div>
+     <!-- download baner -->
+     <div class="download-bnr">
+        <div class="phne-img">
+            <img src="./assets/phoneimg.png" alt="phone image">
+        </div>
+        <div class="container">
+            <h1>Get the Zomato app</h1>
+            <div class="input-radio">
+               <input type="radio" name="choice"  id="radio"/>Email
+                <input type="radio" name="choice" id="radio"/>Phone
+           </div>
+           <div class="input-fields">
+              <div class="ip">
+                <input type="email"/>
+              </div>
+              <button>Share app link</button>
+            </div>
+            <div class="con-pl">
+              <p>Download app from</p>
+              <div class="playstore">
+                 <img src="./assets/gplay.png" alt="google-play"/>
+                 <img src="./assets/appleplay.png" alt="apple play store">
+              </div>
+            </div>
+        </div>
+     </div>
+     <div class="acordian">
+        <div class="acd-1">
+          <div class="heading">
+               <p>Popular Cuisines Near Me </p>
+               <i class="fa-solid fa-angle-down" onclick="fun1(0)"></i>
+          </div>
+          <div class="down-list" style="display: none;">
+             <p class="popular">
+                <a href="#">Bakery near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                <a href="#">Beverages near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                <a href="#">Biryani near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                <a href="#">Burger near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                <a href="#">Chinese near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                <a href="#">Desserts near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                <a href="#">Ice Cream near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                <a href="#">Kebab near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                <a href="#">Mughlai near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                <a href="#">North Inadian near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                <a href="#">Pizza near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                <a href="#">Sandwich near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+            </p>
+          </div>
+         </div>
+         <div class="acd-2">
+            <div class="heading">
+                 <p>Popular Restaurant Types Near Me
+                 </p>
+                 <i class="fa-solid fa-angle-down" onclick="fun1(1)"></i>
+            </div>
+            <div class="down-list" style="display: none;">
+               <p class="popular">
+                  <a href="#">Bakeries near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                  <a href="#">Bars near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                  <a href="#">Beverage Shops near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                  <a href="#">Bhojalya near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                  <a href="#">Chinese near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                  <a href="#">Desserts near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                  <a href="#">Ice Cream near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                  <a href="#">Kebab near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                  <a href="#">Mughlai near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                  <a href="#">North Inadian near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                  <a href="#">Pizza near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+                  <a href="#">Sandwich near me</a><i class="fa-duotone fa-solid fa-circle"></i>
+              </p>
+            </div>
+           </div>
+           <div class="acd-3">
+            <div class="heading">
+                 <p>Top Restaurant Chains
+                 </p>
+                 <i class="fa-solid fa-angle-down" onclick="fun1(2)"></i>
+            </div>
+            <div class="down-list" style="display: none;">
+               <p class="top-rest">
+                  <a href="#">Bikanervala</a>
+                  <a href="#">Burger King</a>
+                  <a href="#">Burger singh</a>
+                  <a href="#">Domino's</a>
+                  <a href="#">KFC</a>
+                  <a href="#">Krispy Kreme</a>
+                  <a href="#">McDonald's</a>
+                  <a href="#">Pizza Hut</a>
+                  <a href="#">Subway</a>
+                  <a href="#">WOW! Momo</a>
+              </p>
+            </div>
+           </div>
+           <div class="acd-4">
+            <div class="heading">
+                 <p class="city-deli">Cities We Deliver To
+                 </p>
+                 <i class="fa-solid fa-angle-down" onclick="fun1(3)"></i>
+            </div>
+            <div class="down-list" style="display: none;">
+               <p class="top-rest">
+                  <a href="#">Delhi NCR</a>
+                  <a href="#">Kolkata</a>
+                  <a href="#">Mumbai</a>
+                  <a href="#">Bangaluru</a>
+                  <a href="#">Pune</a>
+                  <a href="#">Hyderabad</a>
+                  <a href="#">Chennai</a>
+                  <a href="#">Lucknow</a>
+                  <a href="#">Kochi</a>
+                  <a href="#">Jaipur</a>
+              </p>
+            </div>
+           </div>
+     </div>
+     <!-- footer section -->
+     <div class="footer">
+        <div class="f-1">
+            <h1>Zomato</h1>
+             <div class="subf-1">
+                <div class="country">
+                    <select>
+                      <option value="india">India</option>
+                      <option value="USA">USA</option>
+                      <option value="UK">UK</option>
+                      <option value="Russia">Russia</option>
+                    </select>
+                </div>
+                 <div class="language">
+                    <select>
+                      <option value="English">English</option>
+                      <option value="Telugu">Telugu</option>
+                      <option value="Hindi">Hindi</option>
+                      <option value="Russian">Russian</option>
+                    </select>
+                </div>
+             </div>
+        </div>
+        <div class="f-2">
+            <div class="fcard1">
+                <h4>ABOUT ZOMATO</h4>
+                <a href="#">Who We Are</a>
+                <a href="#">Blog</a>
+                <a href="#">Work With Us</a>
+                <a href="#">Investor Relations</a>
+                <a href="#">Report Fraud</a>
+                <a href="#">Press Kit</a>
+                <a href="#">Contact Us </a>
+            </div>
+            <div class="fcard2">
+                <h4>ZOMAVERSE</h4>
+                <a href="#">Zomato</a>
+                <a href="#">Blinkit</a>
+                <a href="#">District</a>
+                <a href="#">Feeding India</a>
+                <a href="#">Hyperpure</a>
+                <a href="#">Zomato Live</a>
+                <a href="#">Zomaland</a>
+                <a href="#">Weather Union</a>
+            </div>
+            <div class="fcard3">
+               <h4>FOR RESTAURANTS</h4>
+               <a href="#">Partner With Us</a>
+               <a href="#">Apps For You</a>
+            </div>
+            <div class="fcard4">
+                <h4>LEARN MORE</h4>
+                <a href="#">Privacy</a>
+                <a href="#">Security</a>
+                <a href="#">Terms</a>
+            </div>
+            <div class="fcard5">
+                <h4>SOCIAL LINKS</h4>
+                <div class="icons">
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+                <div class="dwld-app">
+                    <img src="./assets/gplay.png" alt="google-play"/>
+                    <img src="./assets/appleplay.png" alt="apple play store">
+                </div>
+            </div>
+        </div>
+        <div class="f-3">
+            <hr>
+           <p>By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners@....</p>
+        </div>
+     </div>
+    <script src="script.js"></script>
+</body>
+</html> 

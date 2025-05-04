@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pre-Load Logo</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="logo1.jpg" alt="Your Logo">
+    </div>
+    <div class="main-content">
+        </div>
+    <script>
+        // Wait for 2 seconds before showing the main content
+    setTimeout(function() {
+    document.querySelector('.logo-container').style.display = 'none';
+    document.querySelector('.main-content').style.display = 'block';
+            }, 2000); // Adjust the delay time as needed
+    </script>
+</body>
+</html>

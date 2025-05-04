@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style1.css">
+    <title>Document</title> 
+    <style>
+ nav {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+nav h1 {
+    color: rgb(8, 8, 8);
+    font-size: 24px;
+    margin: 0;
+}
+
+nav i {
+    font-size: 24px;
+    color: rgb(15, 14, 14);
+    cursor: pointer;
+}
+
+nav .bars {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    width: 300px;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+nav .bars .controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+nav .bars .controls i {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+nav .bars .nav-btns {
+    width: 100%;
+}
+
+nav .bars .nav-btns a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 18px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+nav .bars .nav-btns a:hover {
+    background-color: #f0f0f0;
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <!-- Hamburger menu icon -->
+        <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        <div class="bars" style="display: none;">
+           <div class="controls">
+            <!-- Close button to hide menu -->
+            <i class="fa-solid fa-xmark" onclick="toggleMenu()"></i>
+            <h1>Zomato</h1>
+           </div>
+           <div class="nav-btns">
+            <a href="#">Investor Relations</a>
+            <a href="#">Add Restaurant</a>
+            <a href="#">Log in</a>
+            <a href="#">Sign up</a>
+           </div>
+        </div>
+    </nav>
+    
+    <script>
+        function toggleMenu() {
+            let menu = document.getElementsByClassName('bars')[0];
+            // Toggle the display property
+            if (menu.style.display === 'none') {
+                menu.style.display = 'flex';
+            } else {
+                menu.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
